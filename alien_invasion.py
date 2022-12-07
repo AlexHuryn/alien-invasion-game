@@ -1,5 +1,7 @@
 import sys
+
 import pygame
+
 from settings import Settings
 from ship import Ship
 import game_functions as gf
@@ -15,7 +17,8 @@ def run_game():
     bg_color = (230, 230, 230)
     # Running the main game loop
     while True:
-        gf.check_events()
+        gf.check_events(ship)
+        ship.update()
         gf.update_screen(ai_settings, screen, ship)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
