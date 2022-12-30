@@ -1,9 +1,10 @@
 import pygame
+from pygame.sprite import Sprite
 
 
-class Ship():
+class Ship(Sprite):
     def __init__(self, ai_settings, screen):
-        """Initializes the ship and sets its initial position"""
+        super(Ship, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
         # Loading an image of a ship and getting a rectangle.
